@@ -1,0 +1,30 @@
+.card {
+  position: relative;
+
+  &:hover {
+    .deleteButton,
+    .editButton {
+      display: block;
+    }
+  }
+
+  .deleteButton,
+  .editButton {
+    position: absolute;
+    display: none;
+  }
+
+  .editButton {
+    top: 10px;
+    right: 40px;
+  }
+
+  .deleteButton {
+    top: 10px;
+    right: 10px;
+  }
+
+  input {
+    width: 100%;
+  }
+}

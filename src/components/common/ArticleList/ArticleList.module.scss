@@ -1,0 +1,19 @@
+$item-width: minmax(200px, 1fr);
+
+.articleList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, $item-width);
+
+  @include laptop {
+    grid-template-columns: repeat(3, $item-width);
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, $item-width);
+  }
+
+  @include mobile {
+    grid-template-columns: $item-width;
+  }
+}

@@ -1,0 +1,15 @@
+.mainContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .select {
+    width: 200px;
+  }
+
+  .orderDesc {
+    transform: rotate(180deg);
+  }
+}
