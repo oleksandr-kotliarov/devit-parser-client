@@ -1,3 +1,3 @@
 export default {
-  API_URL: 'http://localhost:5000/api',
+  API_URL: 'https://devit-parser-server.vercel.app/api',
 };
