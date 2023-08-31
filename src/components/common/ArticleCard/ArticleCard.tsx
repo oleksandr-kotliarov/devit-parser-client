@@ -16,34 +16,40 @@ import ArticleEditForm from '../ArticleEditForm/ArticleEditForm';
 // Hooks
 import { useArticleController } from '@/hooks/useArticleController';
 import { useState } from 'react';
+import { useAppSelector } from '@/app/hooks';
 
 interface Props {
   article: IArticle;
 }
 
 function ArticleCard({ article }: Props) {
+  const isAuth = useAppSelector((state) => state.auth._isAuth);
   const { deleteArticle } = useArticleController();
   const [isEdit, setIsEdit] = useState(false);
 
   return (
     <Card sx={{ minWidth: 275, width: '100%' }} className={styles.card}>
-      <button
-        className={styles.deleteButton}
-        onClick={() => deleteArticle(article._id)}
-        title="Delete"
-      >
-        <DeleteIcon />
-      </button>
-      {!isEdit && (
-        <button
-          className={styles.editButton}
-          title={isEdit ? 'Save' : 'Edit'}
-          onClick={() => {
-            setIsEdit(true);
-          }}
-        >
-          <EditIcon />
-        </button>
+      {isAuth && (
+        <>
+          <button
+            className={styles.deleteButton}
+            onClick={() => deleteArticle(article._id)}
+            title="Delete"
+          >
+            <DeleteIcon />
+          </button>
+          {!isEdit && (
+            <button
+              className={styles.editButton}
+              title={isEdit ? 'Save' : 'Edit'}
+              onClick={() => {
+                setIsEdit(true);
+              }}
+            >
+              <EditIcon />
+            </button>
+          )}
+        </>
       )}
       <CardContent>
         <Typography

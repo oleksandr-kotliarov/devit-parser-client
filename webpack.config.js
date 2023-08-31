@@ -29,7 +29,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData: "@import 'src/styles/theme.scss';",
+              additionalData: `@import 'src/styles/theme.scss';`,
             },
           },
         ],
